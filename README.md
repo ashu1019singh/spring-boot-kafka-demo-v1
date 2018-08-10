@@ -113,21 +113,21 @@ Setup for Kafka:
 
     A producer, which enables the publication of records and data to topics.
     A consumer, which reads messages and data from topics.
-    First, create a topic named TutorialTopic by typing:
+    First, create a topic named test1 by typing:
 
-        ~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+        ~/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test1
 
     You can create a producer from the command line using the kafka-console-producer.sh script. It expects the Kafka server's hostname, port, and a topic name as arguments.
 
-    Publish the string "Hello, World" to the TutorialTopic topic by typing:
+    Publish the string "Hello, World" to the test1 topic by typing:
 
-        echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
+        echo "Hello, World" | ~/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test1 > /dev/null
     
     Next, you can create a Kafka consumer using the kafka-console-consumer.sh script. It expects the ZooKeeper server's hostname and port, along with a topic name as arguments.
     
-    The following command consumes messages from TutorialTopic. Note the use of the --from-beginning flag, which allows the consumption of messages that were published before the consumer was started:
+    The following command consumes messages from test1. Note the use of the --from-beginning flag, which allows the consumption of messages that were published before the consumer was started:
 
-        ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+        ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test1 --from-beginning
 
     If there are no configuration issues, you should see Hello, World in your terminal:
 
